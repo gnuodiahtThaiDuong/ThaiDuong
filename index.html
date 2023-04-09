@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM Final</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <style>
+        @media only screen and (max-width:800px) {
+            #no-more-tables tbody,
+            #no-more-tables tr,
+            #no-more-tables td {
+                display: block;
+            }
+            #no-more-tables thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            #no-more-tables td {
+                position: relative;
+                padding-left: 50%;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+            #no-more-tables td:before {
+                content: attr(data-title);
+                position: absolute;
+                left: 6px;
+                font-weight: bold;
+            }
+            #no-more-tables tr {
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container">
+            <a class="navbar-brand" href="#">Dương Fashion Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown">
+                                Sản phẩm
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Giày</a></li>
+                                <li><a class="dropdown-item" href="#">Quần</a></li>
+                                <li><a class="dropdown-item" href="#">Áo</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown">
+                                Về chúng tôi
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Zalo:0976596213</a></li>
+                                <li><a class="dropdown-item" href="#">FB:Thái Dương</a></li>
+                                <li><a class="dropdown-item" href="#">Email:duongpt@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="#">Sign up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light btn-light">
+        <div class="container">
+            <a class="text-danger navbar-brand" href="#">Tìm kiếm sản phẩm tại đây</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="w-100 d-flex me-auto my-2 my-lg-0">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-primary " type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="text-danger nav-link" href="#"><i class="fa fa-shopping-cart">Giỏ hàng</i> </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="text-center text-danger h2">Giỏ hàng của bạn</div>
+    
+        
+  <div class="col-md-12">
+    <section class="bg-light p-5">
+        
+        <div class="table-responsive table-bordered" id="no-more-tables">
+            <table class="table bg-white table-bordered">
+                <thead class="bg-dark text-light table-bordered">
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Chi tiết</th>
+                        <th>Xóa</th>
+                        <th>Số lượng</th>
+                        <th>Giảm giá</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-bottom">
+                        <td data-title="Sản phẩm"><img src="hinhanh/áopolo.jfif" alt="" width="100rem" height="110rem"></td>
+                        <td data-title="Chi tiết">
+                            <p>Áo Polo </p>
+                            <p>XL</p>
+                            <p><strong>59.000đ</strong></p>
+                        </td></td>
+                        <td data-title="Xóa"><h3><i class="fa-solid fa-trash-can"></i></h3></td>
+                        <td data-title="Số lượng"> <div class="quantity">
+                            <input type="number" min="1" max="100" value="1" class="form-control text-center w-50">
+                        </div></td>
+                        <td data-title="Giảm giá">20%</td>
+                        <td data-title="Thành tiền"><p><strong>59.000đ</strong></p></td>
+                        
+                    </tr>
+                    <tr class="border-bottom">
+                        <td data-title="Sản phẩm"><img src="hinhanh/áoatino.jfif" alt="" width="100rem" height="110rem"></td>
+                        <td data-title="Chi tiết">
+                            <p>Áo Atino </p>
+                            <p>L</p>
+                            <p><strong>99.000đ</strong></p>
+                        </td></td>
+                        <td data-title="Xóa"><h3><i class="fa-solid fa-trash-can"></i></h3></td>
+                        <td data-title="Số lượng"> <div class="quantity">
+                            <input type="number" min="1" max="100" value="1" class="form-control text-center w-50">
+                        </div></td>
+                        <td data-title="Giảm giá">10%</td>
+                        <td data-title="Thành tiền"><p><strong>99.000đ</strong></p></td>
+                    </tr><tr class="border-bottom">
+                        <td data-title="Sản phẩm"><img src="hinhanh/giaythethaonu.jpg" alt="" width="100rem" height="110rem"></td>
+                        <td data-title="Chi tiết">
+                            <p>Giày nữ</p>
+                            <p>40</p>
+                            <p><strong>189.000đ</strong></p>
+                        </td></td>
+                        <td data-title="Xóa"><h3><i class="fa-solid fa-trash-can"></i></h3></td>
+                        <td data-title="Số lượng"> <div class="quantity">
+                            <input type="number" min="1" max="100" value="1" class="form-control text-center w-50">
+                        </div></td>
+                        <td data-title="Giảm giá">30%</td>
+                        <td data-title="Thành tiền"><p><strong>189.000đ</strong></p></td>
+                    </tr><tr class="border-bottom">
+                        <td data-title="Sản phẩm"><img src="hinhanh/aothun.jpg" alt="" width="100rem" height="110rem"></td>
+                        <td data-title="Chi tiết">
+                            <p>Áo Thun Nam</p>
+                            <p>XXL</p>
+                            <p><strong>39.000đ</strong></p>
+                        </td></td>
+                        <td data-title="Xóa"><h3><i class="fa-solid fa-trash-can"></i></h3></td>
+                        <td data-title="Số lượng"> <div class="quantity">
+                            <input type="number" min="1" max="100" value="1" class="form-control text-center w-50">
+                        </div></td>
+                        <td data-title="Giảm giá">50%</td>
+                        <td data-title="Thành tiền"><p><strong>39.000đ</strong></p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+    <div class="col-md-12 bg-light  ">
+       
+        <div class="container border bg-white">
+            <p>Tên sản phẩm<span class="float-end"><strong>Áo Polo</strong></span></p>
+            <hr>
+            <p>Vận chuyển <span class="float-end"><strong class="text-warning h2">Free shipping!</strong></span></p>
+            <hr>
+            <p>Giá<span class="float-end"><strong>59.000đ</strong></span></p>
+            <hr>
+            <p>Số lượng<span class="float-end"><strong>1</strong></span> </p>
+            <hr>
+            <p>Tổng tiền <span class="float-end"><strong class="text-success h3">59.000 đ</strong></span></p>
+            <div class="text-center">
+                <input type="" class=" stretch-button bg-transparent btn btn-light
+                     text-black" placeholder="Coupon code"></input>
+                <button class="btn btn-outline-success bg-secondary text-white" type="submit">Thanh toán</button>
+                <br><br>
+            </div>
+        </div>
+
+    </div>
+  
+
+   
+    <footer class="bg-white m-5 py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <h5>Giới thiệu</h5>
+              <p>Dương Fashion Shop là nơi mua sắm uy tín, chất lượng cho mọi người.</p>
+            </div>
+            <div class="col-md">
+              <h5>Sản phẩm</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Quần áo nam</a></li>
+                <li><a href="#">Quần áo nữ</a></li>
+                <li><a href="#">Quần áo trẻ em</a></li>
+                <li><a href="#">Giày</a></li>
+                <li><a href="#">Xem thêm</a></li>
+              </ul>
+            </div>
+            <div class="col-md">
+              <h5>Thông tin</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Về chúng tôi</a></li>
+                <li><a href="#">Bảo hiểm khách hàng</a></li>
+                <li><a href="#">Văn phòng</a></li>
+                <li><a href="#">Giá &amp; Vận chuyển</a></li>
+              </ul>
+            </div>
+            <div class="col-md">
+              <h5>Hỗ trợ khách hàng</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Trả lời câu hỏi</a></li>
+                <li><a href="#">Tư vấn</a></li>
+                <li><a href="#">SDT:0356189329</a></li>
+              </ul>
+            </div>
+            <div class="col-md">
+              <h5>Theo dõi chúng tôi</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+              </ul>
+            </div>
+            <div class="col-md">
+              <h5>Email</h5>
+              <p>Bạn nhập email để nhập cái thông báo sớm nhất về khuyến mãi</p>
+              <form>
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Đại chỉ Email">
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary" type="submit">Đăng kí</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+    <footer class="py-3 bg-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-light text-center text-md-start">Dương Fashion Shop &copy; 2023</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-inline text-center text-md-end mb-0">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-facebook fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-twitter fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-instagram fa-lg"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
